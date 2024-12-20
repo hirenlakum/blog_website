@@ -59,4 +59,12 @@ router.get("/blogDetail/:id", async (req,res)=>{
 
 })
 
+router.delete("/blogDelete/:id", async (req,res)=>{
+    const {id} = req.params
+
+    await blogModel.findByIdAndDelete({_id:id})
+    .then(user => res.json(user))
+    .catch(err => res.json(err))
+})
+
 module.exports=router

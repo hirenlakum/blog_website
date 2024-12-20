@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import axios from "axios"
-
+import { FaRegEdit } from "react-icons/fa"
 
 const ActionBlog = () => {
 
@@ -72,8 +72,8 @@ axios.get("http://localhost:3006/getUser")
               {user.password}
             </td>
             
-            <td class="p-4">
-             
+            <td class="p-4 flex gap-3">
+          
               <button class="mr-4" title="Delete" onClick={()=>handleDelete(user._id)} >
                 <svg xmlns="http://www.w3.org/2000/svg"  class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
                   <path

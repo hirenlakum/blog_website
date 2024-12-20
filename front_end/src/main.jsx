@@ -19,6 +19,7 @@ import Admin from './components/Admin.jsx'
 import CreateBlog from './components/CreateBlog.jsx'
 import Awarded from './components/Awarded.jsx'
 import ActionBlog from './components/ActionBlog.jsx'
+import BlogAction from './components/BlogAction.jsx'
 
 
 const router = createBrowserRouter([
@@ -73,6 +74,9 @@ const router = createBrowserRouter([
       },
       {
      path:"/actionBlog",element:<ActionBlog/>
+      },
+      {
+      path:"/blogaction",element:<BlogAction/>
       },
       
     ],
