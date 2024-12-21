@@ -44,6 +44,10 @@ const CreateBlog = () => {
       navigate("/actionBlog")
     }
 
+    const BlogOnAction = () => {
+      navigate("/blogaction")
+    }
+
   return (
     <div>
       <div className='w-screen h-screen flex items-center flex-col justify-center'>
@@ -66,6 +70,7 @@ const CreateBlog = () => {
  <div>{mesg}</div>
   <button className='flex items-center justify-center w-full rounded-lg bg-blue-500 text-white h-[40px] mt-4' onClick={createBlog}>createBlog</button>
   <button className='flex items-center justify-center w-full rounded-lg bg-blue-500 text-white h-[40px] mt-4' onClick={actionOnBlog}>ActionOnBlog</button>
+  <button className='flex items-center justify-center w-full rounded-lg bg-blue-500 text-white h-[40px] mt-4' onClick={BlogOnAction}>BlogAction</button>
   </form>
   
      </div>

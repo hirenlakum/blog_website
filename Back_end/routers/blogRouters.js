@@ -67,4 +67,31 @@ router.delete("/blogDelete/:id", async (req,res)=>{
     .catch(err => res.json(err))
 })
 
+router.get("/getEachBlog/:id",async (req,res)=>{
+    const {id} = req.params
+
+    await blogModel.findById({_id:id})
+    .then(user => res.json(user))
+    .catch(err => res.json(err))
+})
+
+router.put("/updateBlog/:id",upload.single("image"), async (req,res)=>{
+    const {id} = req.params
+
+    const {title,content} = req.body
+
+    console.log(title,content)
+
+    const imageUrl =`${req.file.filename}`
+    console.log(imageUrl)
+
+   
+
+    await blogModel.findByIdAndUpdate({_id:id},{title:req.body.title,content:req.body.content,image:imageUrl})
+    .then(user => res.json(user))
+    .catch(err => res.json(err))
+
+
+})
+
 module.exports=router

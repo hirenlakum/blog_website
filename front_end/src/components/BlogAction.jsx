@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaRegEdit } from "react-icons/fa"
 import { useEffect } from 'react'
 import axios from "axios"
+import {Link} from "react-router-dom"
 
 const BlogAction = () => {
 
@@ -64,7 +65,7 @@ const BlogAction = () => {
                   </td>
                   
                   <td class="p-4 flex gap-3">
-                  <FaRegEdit className='text-black' />
+                <Link to={`/updateblog/${item._id}`}> <FaRegEdit className='text-black' /></Link>
                     <button class="mr-4" title="Delete" onClick={()=>handleDelete(item._id)}  >
                       <svg xmlns="http://www.w3.org/2000/svg"  class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
                         <path
