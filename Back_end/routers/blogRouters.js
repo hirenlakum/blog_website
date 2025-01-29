@@ -10,20 +10,24 @@ const storage = multer.diskStorage({
         cb(null,"uploads/")
     },
     filename:(req,file,cb)=>{
-        cb(null,Date.now()+ "-"+file.originalname)
-    },
+        cb(null,file.originalname)
+    }
 })
 
-const upload = multer({storage})
+const upload = multer({storage:storage})
 
 
 
-router.post("/createblog",upload.single("image"),async(req,res)=>{
+router.post("/createblog",upload.single('image'),async(req,res)=>{
  
     
-        
-        const {title,content} = req.body
-        const imageUrl = `${req.file.filename}`
+        if(!req.file){
+            return res.json('file not uploaded')
+        }
+       
+
+     const {title,content} = req.body
+      const imageUrl=`${req.file.filename}`
 
        await  blogModel.create({
             title:title,

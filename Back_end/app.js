@@ -13,6 +13,10 @@ app.use("/uploads",express.static(path.join(__dirname,"uploads")))
 app.use(userRouter)
 app.use(blogRouter)
 
+app.use("/",(req,res)=>{
+    res.send("BackEnd Wook Successfully")
+})
+
 
 
 const port = 3006

@@ -70,7 +70,7 @@ router.post("/login",async (req,res)=>{
       email:user.email
 
     },SECRET_KEY)
-    console.log(token)
+
     return res.json({
       success:true,
       msg:"login"
